@@ -1,10 +1,55 @@
+<!doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Scheduling Refresh Queries for Keeping Results from a SPARQL Endpoint Up-to-Date</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
+    <div class="wrapper">
+      <header>
+        
+      </header>
+      <section>
+        <h1>Scheduling Refresh Queries for Keeping Results from a SPARQL Endpoint Up-to-Date</h1>
+        
+        <h2>Authors</h2>
+        
+        <ul>
+          <li>Magnus Knuth, Hasso Plattner Institute, University of Potsdam, Germany</li>
+          <li>Olaf Hartig, Department of Computer and Information Science (IDA), Linköping University, Sweden</li>
+          <li>Harald Sack, Hasso Plattner Institute, University of Potsdam, Germany</li>
+        </ul>
 
-    <p>This is the home page. </p>
+        <h2>Abstract</h2>
 
+        <p>Many datasets change over time. As a consequence, long-running applications that cache and repeatedly use query results obtained from a SPARQL endpoint may resubmit the queries regularly to ensure up-to-dateness of the results. While this approach may be feasible if the number of such regular refresh queries is manageable, with an increasing number of applications adopting this approach, the SPARQL endpoint may become overloaded with such refresh queries. Therefore, a more scalable approach would be to use a middle-ware component at which the applications register their queries and get notified with updated query results once the results have changed. Then, this middle-ware can schedule the repeated execution of the refresh queries without overloading the endpoint.
+        In this paper, we study the problem of scheduling refresh queries for a large number of registered queries by assuming an overload-avoiding upper bound on the length of a regular time slot available for testing refresh queries. We investigate a variety of scheduling strategies and compare them experimentally in terms of time slots needed before they recognize changes and number of changes that they miss.</p>
+
+        <h2>Experimental Data</h2>
+
+        <p>We provide the data gathered from the experiments in form of a full MySQL database dump and an RDF dump with the query executions as planned by the evaluated strategies.</p>
+
+        <p>The database dump includes the plain results of all query executions, while the RDF dataset refers to their hash values. The RDF dataset applies the <a href="https://github.com/AKSW/LSQ/blob/gh-pages/LSQ_Vocab.rdf">LSQ vocabulary</a>. We extended the vocabulary to describe relevant metadata, such as the delay and the missed updates of individual query executions.</p>
+
+        <ul>
+          <li>We randomly selected 10,000 DBpedia queries from the <a href="http://aksw.github.io/LSQ/">Linked SPARQL Queries dataset (LSQ)</a>: <a href="https://github.com/SemanticMultimedia/RefreshQueries/blob/gh-pages/data/queries.txt">queries.txt</a></li>
+          <li>Full MySQL database dump: <a href="https://github.com/SemanticMultimedia/RefreshQueries/blob/gh-pages/data/queries.txt">dump.sql.gz</a></li>
+          <li>RDF dataset: <a href="https://github.com/SemanticMultimedia/RefreshQueries/blob/gh-pages/data/queries.txt">dump.ttl.gz</a></li>
+        </ul>
+
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
   </body>
 </html>
