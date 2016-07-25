@@ -37,7 +37,15 @@
 
         <ul>
           <li>We randomly selected 10,000 DBpedia queries from the <a href="http://aksw.github.io/LSQ/">Linked SPARQL Queries dataset (LSQ)</a>: <a href="https://github.com/SemanticMultimedia/RefreshQueries/blob/gh-pages/data/queries.txt">queries.txt</a></li>
-          <li>Full MySQL database dump: <a href="https://github.com/SemanticMultimedia/RefreshQueries/blob/gh-pages/data/queries.txt">dump.sql.gz</a></li>
+          <li>Full MySQL database dump
+            <ul>
+              <li><a href="http://141.89.225.50/RefreshQueries/reevaluate_query_2016-07-18.sql.gz">reevaluate_query_2016-07-18.sql.gz</a> (412K): queries with metadata</li>
+              <li><a href="http://141.89.225.50/RefreshQueries/reevaluate_revision_2016-07-18.sql.gz">reevaluate_revision_2016-07-18.sql.gz</a> (45K): hourly revisions with statistics</li>
+              <li><a href="http://141.89.225.50/RefreshQueries/reevaluate_query_execution_all_2016-07-18.sql.gz">reevaluate_query_execution_all_2016-07-18.sql.gz</a> (80M): all query executions with metadata (hashed query results)</li>
+              <li><a href="http://141.89.225.50/RefreshQueries/reevaluate_evaluation_2016-07-18.sql.gz">reevaluate_evaluation_2016-07-18.sql.gz</a> (295M): query re-evaluation as performed by scheduling strategies with metadata</li>
+              <li><a href="http://141.89.225.50/RefreshQueries/reevaluate_results_2016-07-18.sql.gz">reevaluate_results_2016-07-18.sql.gz</a> (62G): plain query results for all query executions</li>
+            </ul>
+          </li>
           <li>RDF dataset: <a href="https://github.com/SemanticMultimedia/RefreshQueries/blob/gh-pages/data/queries.txt">dump.ttl.gz</a></li>
         </ul>
 
